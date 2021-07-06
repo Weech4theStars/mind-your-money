@@ -4,34 +4,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mind Your Money App</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./scipt.js"></script>
 </head>
-<body>
-    <header>
-
-    </header>
-    <main>
-        <p>Mind you money app</p>
-
-        <p>This is a form that sends a POST request to the server:</p>
-    <form action="/form-handler" method="POST">
-
-      <input type="text" name="name-input" placeholder="Your Name"/>
-      <br/><br/>
-
-      <select name="color-input">
-        <option value="red">Red</option>
-        <option value="green">Green</option>
-        <option value="blue">Blue</option>
-      </select>
-      <br/><br/>
-
-      <textarea name="description-input" placeholder="Your Description"></textarea>
-      <br/><br/>
-
-      <input type="submit"/>
+<body >
+    <h1 style="text-align:center;">Bill Splitter</h1>
+    <form action="" class="form" onsubmit="handleClick();return false"> 
+      <label for="amount">Bill Amount($): </label>
+      <input type="text" id="amount"/>
+      <label for="percentage">Tip Percentage(%):</label>
+      <input type="text" id="percentage"/>
+      <label for="number">The number of people: </label>
+      <input type="text" id="number"/>
+      <button>Submit</button>
     </form>
-    </main>
+    <div id="displayAmount"></div>
+
 </body>
 </html>
