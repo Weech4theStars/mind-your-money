@@ -36,6 +36,25 @@ function addNumberOfPeople(){
     }
 }
 
-function calculateFunction(){
-    
+function calculateAmount(){
+    const amount = document.form
+    console.log(amount)
+}
+
+function addPerson(){
+    const listElement = document.getElementById("people")
+    const li = document.createElement("li")
+    const form = document.createElement("form")
+    const inputEle = document.createElement("input")
+    inputEle.setAttribute("type", "text")
+    inputEle.setAttribute("id", "name")
+    inputEle.setAttribute("placeholder", "Enter your name:")
+    const inputEle2 = document.createElement("input")
+    inputEle2.setAttribute("type", "text")
+    inputEle2.setAttribute("id", "amount")
+    inputEle2.setAttribute("placeholder", "Enter the amount you spend:")
+    form.appendChild(inputEle)
+    form.appendChild(inputEle2)
+    li.appendChild(form)
+    listElement.appendChild(li)
 }
