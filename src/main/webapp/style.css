@@ -3,9 +3,20 @@
     justify-content: center;
 }
 
-body{
-    display:contents
-}
-.center {
+.center{
     margin: auto;
+}
+
+h1{
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: center;
+    background-color: green;
+}
+
+h3{
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: center;
+    background-color: lightgreen;
 }
