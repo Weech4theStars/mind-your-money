@@ -16,45 +16,66 @@ function handleClick(){
 
 }
 
-function addNumberOfPeople(){
-    const number = document.getElementById("numberOfPeople").value
-    document.getElementById("numberOfPeople").value = ""
-    console.log(number)
-    const ele = document.getElementById("list")
-    for(let i = 0; i < number; i++){
-        const list = document.createElement("li")
-        const div = document.createElement("div")
-        const inputEle = document.createElement("input")
-        inputEle.setAttribute("type", "text")
-        inputEle.setAttribute("id", "amount1")
-        const node = document.createTextNode("Enter person " + i + "'s amount: ")
-        div.appendChild(node)
-        div.appendChild(inputEle)
-        list.appendChild(div)
-        ele.appendChild(list)
 
-    }
+
+
+
+const amountMap = {};
+let numberOfFields = 0;
+let tip = 0;
+let total = 0;
+let tax = 0;
+function updateTotalAmount() {
+    total = 0
+    const amountArea = document.getElementById('amount')
+	for (const key in amountMap) {
+  	total += amountMap[key];	
+  }
+  
+  total = total + ((tip/100) * total);
+  console.log(amountMap, total)
+
 }
+
+function handleInput(e) {
+	if (e.target.name.startsWith('name_')) {
+ 		// Do nothing
+  } else if (e.target.name.startsWith('amount_')) {
+    amountMap[e.target.name.slice(7)] = Number(e.target.value);
+  }
+  
+  updateTotalAmount();
+}
+
+function handleButtonClick() {
+  const form = document.getElementById('form');
+  const container = document.createElement('div');
+  
+  const nameInput = document.createElement('input');
+  nameInput.setAttribute('name', `name_${numberOfFields}`);
+  nameInput.setAttribute('placeholder', 'Enter a name');
+  nameInput.addEventListener('input', handleInput);
+  const amountInput = document.createElement('input');
+  amountInput.setAttribute('name', `amount_${numberOfFields}`);
+  amountInput.setAttribute('placeholder', 'Enter an amount');
+  amountInput.addEventListener('input', handleInput);
+  
+  container.appendChild(nameInput);
+  container.appendChild(amountInput);
+  
+  form.appendChild(container);
+  numberOfFields++;
+}
+
+function updateTip() {
+  const ele = document.getElementById("tip")
+  tip = ele.value
+  updateTotalAmount();
+}
+
 
 function calculateAmount(){
-    const amount = document.form
-    console.log(amount)
+    const amountArea = document.getElementById('amount2')
+    amountArea.innerText = `$${total / numberOfFields} per person`
 }
 
-function addPerson(){
-    const listElement = document.getElementById("people")
-    const li = document.createElement("li")
-    const form = document.createElement("form")
-    const inputEle = document.createElement("input")
-    inputEle.setAttribute("type", "text")
-    inputEle.setAttribute("id", "name")
-    inputEle.setAttribute("placeholder", "Enter your name:")
-    const inputEle2 = document.createElement("input")
-    inputEle2.setAttribute("type", "text")
-    inputEle2.setAttribute("id", "amount")
-    inputEle2.setAttribute("placeholder", "Enter the amount you spend:")
-    form.appendChild(inputEle)
-    form.appendChild(inputEle2)
-    li.appendChild(form)
-    listElement.appendChild(li)
-}

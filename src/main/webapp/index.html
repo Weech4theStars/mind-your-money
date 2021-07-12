@@ -20,12 +20,18 @@
     </form>
     <div id="displayAmount"></div>
 <hr>
-    <div>
-      Add a person? 
-      <button onclick="addPerson()"> Yes </button>
-      <ul id="people"></ul>
-      Tip Percentage: <input type="text" id="percentage"/>
-      <button onclick="calculateAmount()">Calculate</button>
-    </div>
+  <form id="form" >
+
+  <div>
+    <input name="tip" id="tip" placeholder="Tip amount" onchange="updateTip()"/>
+  </div>
+  </form>
+  
+  <div id="amount2">
+   $0
+  </div>
+  
+  <button id="button" onclick="handleButtonClick()">Add Field</button>
+  <button id="button" onclick="calculateAmount() ">Calculate</button>
 </body>
 </html>
