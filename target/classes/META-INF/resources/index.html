@@ -3,35 +3,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mind Your Money App</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <title>Mind Your Money</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./scipt.js"></script>
 </head>
 <body>
-    <header>
-
-    </header>
-    <main>
-        <p>Mind you money app</p>
-
-        <p>This is a form that sends a POST request to the server:</p>
-    <form action="/form-handler" method="POST">
-
-      <input type="text" name="name-input" placeholder="Your Name"/>
-      <br/><br/>
-
-      <select name="color-input">
-        <option value="red">Red</option>
-        <option value="green">Green</option>
-        <option value="blue">Blue</option>
-      </select>
-      <br/><br/>
-
-      <textarea name="description-input" placeholder="Your Description"></textarea>
-      <br/><br/>
-
-      <input type="submit"/>
+    <h1>Mind Your Money: Bill Splitter</h1>
+    <h3>Use this section to divide the tip amount evenly amoung your group.</h3>
+    <form action="" class="form" onsubmit="handleClick();return false"> 
+      <label for="amount">Bill Amount($): </label>
+      <input type="text" id="amount"/>
+      <label for="percentage">Tip Percentage(%):</label>
+      <input type="text" id="percentage"/>
+      <label for="number">The number of people: </label>
+      <input type="text" id="number"/>
+      <button>Submit</button>
     </form>
-    </main>
+    <div id="displayAmount"></div>
+<hr>
+    <h3>Use this section if you want each member of your group to tip based on the cost of their food.</h3>
+    <div>
+      Add a person? 
+      <button onclick="addPerson()"> Yes </button>
+      <ul id="people"></ul>
+      Tip Percentage(%): <input type="text" id="percentage"/>
+      <button onclick="calculateAmount()">Calculate</button>
+    </div>
 </body>
 </html>

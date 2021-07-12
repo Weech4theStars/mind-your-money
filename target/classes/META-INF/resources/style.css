@@ -1,0 +1,47 @@
+*{
+    background-color: darkseagreen;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+}
+
+.center{
+    margin: auto;
+}
+
+h1{
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: center;
+    background-color: green;
+}
+
+h3{
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: center;
+    background-color: lightgreen;
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: darkgreen;
+}
+
+button:hover{
+    background-color: white;
+    font-size: large;
+}
+
+label{
+    padding-left: 30px;
+    padding-right: 10px;
+}
+
+input{
+    background-color: white;
+    padding-right: 10px;
+}
